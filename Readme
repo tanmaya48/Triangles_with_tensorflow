@@ -1,0 +1,5 @@
+Same triangle program implemented with tensorflow... 
+
+Sometimes it gets stuck at 80% accuracy, sometimes it goes to the high 90s depending upon the initial values... usually gets there in around 200 epochs
+
+In testing I found that the SGD optimizer performed better than the ADAM optimizer

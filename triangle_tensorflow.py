@@ -4,7 +4,6 @@
 # In[3]:
 
 
-### https://www.tensorflow.org/tutorials/load_data/pandas_dataframe
 
 import numpy as np
 import tensorflow as tf
@@ -56,9 +55,8 @@ def get_compiled_model():
     tf.keras.layers.Dense(3, activation='relu'),  ### this is custom input layer
       
     tf.keras.layers.Dense(3, activation='tanh'),  ### this is custom
-      
-    ##tf.keras.layers.Dense(2, activation='hard_sigmoid'),  ### this is custom
-    tf.keras.layers.Dense(1,activation='hard_sigmoid')
+    
+    tf.keras.layers.Dense(1,activation='hard_sigmoid') output_layer
   ])
 
   sgd = tf.keras.optimizers.SGD(lr=0.1, momentum=0.0, decay=0.0025, nesterov=False)
@@ -75,7 +73,7 @@ def get_compiled_model():
 
 model = get_compiled_model()
 
-model.load_weights('tri_side_w', by_name=False)
+model.load_weights('tri_side_w', by_name=False) ## comment this out if weights do not exist
 
 model.fit(train_dataset, epochs=3)
 
@@ -109,7 +107,7 @@ for i in range(0,len(y_t),1):
        ## print(y_t[i])
         k+=1
 
-print(k)        
+print("number of correct classifications : ",k)        
         
 
 
